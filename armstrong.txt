@@ -1,0 +1,22 @@
+while True:
+    number = input("Enter a number: ")
+    numberofdigits = len(number)
+    summ = 0
+    if number == "q":
+        print("Good Bye")
+        break
+    elif ("-" in number):
+        print("Please enter a positive number!")
+        continue
+    elif ("." in number) or ("," in number):
+        print("Please enter an integer number")
+        continue
+    elif (number.isdigit() != True):
+        print("Do not use any entries other than numeric values")
+        continue   
+    for i in number:
+        summ += int(i) ** numberofdigits
+    if summ == int(number):
+        print(number, "is a Amstrong number")
+    else:
+        print(number, "is not a  Amstrong number")

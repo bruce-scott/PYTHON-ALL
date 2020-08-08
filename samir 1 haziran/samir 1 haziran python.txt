@@ -1,0 +1,127 @@
+Count the number of each letter in a sentence.
+The department you work for undertook a project construction that makes word / text analysis.
+You are asked to calculate the number of letters or any chars in the sentences entered under this project.
+Write a Python program that;
+takes a sentence from the user,
+counts the number of each letter of the sentence
+
+word = input("Enter a sentance :")
+word_list = list(word)
+word_count = {}
+for letter in word_list:
+    if letter in word_count.keys():
+        word_count.update({letter:word_count[letter]+1})
+    else:
+        word_count.update({letter:1})
+print(word_count)
+
+
+Mark and Jane are very happy after having their first child. Their son
+loves toys, so Mark wants to buy some. There are a number of different
+toys lying in front of him, tagged with their prices.
+Mark has only a certain amount to spend, and he wants to maximize
+the number of toys he buys with this money.
+
+prices =[1 ,12, 5,5,5, 111 ,200 ,1000 ,10] # 1,5,10,12...1000
+budget =16
+prices.sort()
+total_toys = 0 
+while budget >= 0 and total_toys < len(prices):
+    budget -= prices[total_toys]
+    total_toys+=1
+print(total_toys-1)
+
+
+Sorting a list , bubble sorting
+
+my_list = [4,2,31,1,15,2,-100000]
+swapped = True
+if my_list == None :
+    swapped =False
+    print("None cant be entered")
+while swapped:
+    swapped =False
+    for i in range(len(my_list)-1):
+        if my_list[i] > my_list[i+1]:
+            my_list[i],my_list[i+1] = my_list[i+1],my_list[i]
+            swapped = True
+            
+print(my_list)
+
+Given two strings,  and ,
+that may or may not be of the same length,
+determine the minimum number of character deletions required to make  and  anagrams.
+Any characters can be deleted from either of the strings.
+
+a = "Car"
+b = "car"
+pre_total = len(a)+len(b)
+for i in a:
+    if i in b :
+        b = b.replace(i,'',1)
+        a = a.replace(i,'',1)
+ 
+post_total = len(a)+len(b)
+print(f"a value is {a}")
+print(f"b value is {b}")
+if (post_total == pre_total):
+    print("Those two words cant have an anagram")
+else:
+    print(len(a)+len(b))
+
+
+Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
+Symbol       Value
+I             1
+V             5
+X             10
+L             50
+C             100
+D             500
+M             1000
+For example, two is written as II in Roman numeral, just two one’s added together. Twelve is written as, XII, which is simply X + II. The number twenty seven is written as XXVII, which is XX + V + II.
+Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not IIII. Instead, the number four is written as IV. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as IX. There are six instances where subtraction is used:
+I can be placed before V (5) and X (10) to make 4 and 9.
+X can be placed before L (50) and C (100) to make 40 and 90.
+C can be placed before D (500) and M (1000) to make 400 and 900.
+-----------------------------------------------------------------------
+Given an integer, convert it to a roman numeral. Input is guaranteed to be within the range from 1 to 3999.
+Example 1:
+Input: 3
+Output: “III”
+Example 2:
+Input: 4
+Output: “IV”
+Example 3:
+Input: 9
+Output: “IX”
+Example 4:
+Input: 58
+Output: “LVIII”
+Explanation: L = 50, V = 5, III = 3.
+Example 5:
+Input: 1994
+Output: “MCMXCIV”
+Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
+
+mappings = {1000: "M", 900: 'CM', 500: "D", 400: 'CD', 100: "C",
+              90: 'XC', 50: "L", 40: 'XL', 10: "X", 9: 'IX', 5: "V", 4: 'IV', 1: "I"}
+number = int(input ("enter a number :")) # 1994 "MCMXCIV"
+result = ""
+for k,v in mappings.items() : # k =1000
+    value = number // k # 1
+    result += v * value # M *1
+    number%=k # 994
+    
+  # "MCMXCIV"  
+my_input = result 
+final_result = 0
+for k,v in mappings.items():
+    while my_input.startswith(v):
+        final_result+=k
+        my_input=my_input[len(v):]
+        
+print(final_result)
+
+
+

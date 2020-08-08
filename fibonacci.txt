@@ -1,0 +1,39 @@
+nums = map(lambda x, y: (x+y)/2, nums1, nums2)
+print(list(nums))
+
+sent = map(lambda x, y, z: x + " " + y + " " + z, words2, words3, words1)
+for i in sent:
+print(i)
+
+<class "filter">
+Even numbers are: [0, 2, 4, 6, 8]
+
+
+word = input("Input a word to reverse: ")
+a = list(word)
+print(a)
+b = a[::-1]
+print(''.join(b))
+
+print(*list(map(lambda x: f'{x}: even' if x % 2 ==0 else f'{x}: odd', [1,2,3,4])), sep ='\n')
+
+K=[1,2,3,4,5,6]
+odd_even=[(lambda x : 'even' if x%2==0 else 'odd')(x) for x in K]
+print(odd_even)
+
+result =[1,1]
+i = 1
+while result[-1] < 55:
+    result.append(result[i]+result[i-1])
+    i+=1
+print(result)
+
+num = int(input("Enter a number: "))
+a = 1
+b = 1
+fibonacci = [a, b]
+while a + b <= num:
+  a, b = b, a+b
+  fibonacci.append(b)
+print(fibonacci)
+
